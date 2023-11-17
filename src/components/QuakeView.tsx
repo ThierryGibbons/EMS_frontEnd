@@ -21,15 +21,16 @@ const QuakeView: React.FC<QuakeViewProps> = ({ vquake, onSelectView }) => {
 
   return (
     <>
-      {/* View quake data */}
-      <ul
-        className="list-group"
+      <div
+        className="card rounded position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center"
+        style={{ width: "18rem" }}
         onClick={() => {
           handleClick();
         }}
       >
-        <li className={"alert alert-primary"}>
-          <h1>QuakeView</h1>
+        <div className="card-body">
+          <h3 className="card-title">Quake Information</h3>
+          {/* View quake data */}
           <table>
             <tbody>
               <tr>
@@ -66,8 +67,8 @@ const QuakeView: React.FC<QuakeViewProps> = ({ vquake, onSelectView }) => {
               </tr>
             </tbody>
           </table>
-        </li>
-      </ul>
+        </div>
+      </div>
     </>
   );
 };

@@ -56,21 +56,24 @@ function App() {
 
   return (
     <>
-      <div className="QuakeList">
-        {/* View Quakes on left side of screen */}
-        <QuakeList quakes={quakes} onSelectQuake={handleSelection} />
-      </div>
-
-      {/* View Quake Data in centre of screen when selected */}
-      {data !== null && (
-        <div className="QuakeView">
-          <QuakeView vquake={data} onSelectView={quakeViewClear} />
+      <div className="container-fluid">
+        {/* Display Header */}
+        <div className="row">
+          <Header />
         </div>
-      )}
-
-      {/* Display Header */}
-      <div className="a">
-        <Header />
+        {/* Side Panel */}
+        <div className="row">
+          <div className="col-md-3 vh-100 mt-3 bg-light rounded shadow">
+            {/* View Quakes on left side of screen */}
+            <QuakeList quakes={quakes} onSelectQuake={handleSelection} />
+          </div>
+        </div>
+        {/* View Quake Data in centre of screen when selected */}
+        {data !== null && (
+          <div className="">
+            <QuakeView vquake={data} onSelectView={quakeViewClear} />
+          </div>
+        )}
       </div>
 
       {/* Display map as BG */}
