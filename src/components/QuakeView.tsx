@@ -21,7 +21,6 @@ const QuakeView: React.FC<QuakeViewProps> = ({ vquake, onSelectView }) => {
 
   return (
     <>
-      <h1>QuakeView</h1>
       {/* View quake data */}
       <ul
         className="list-group"
@@ -30,6 +29,7 @@ const QuakeView: React.FC<QuakeViewProps> = ({ vquake, onSelectView }) => {
         }}
       >
         <li className={"alert alert-primary"}>
+          <h1>QuakeView</h1>
           <table>
             <tbody>
               <tr>
