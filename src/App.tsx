@@ -2,6 +2,7 @@ import "./App.css"; // Import CSS file
 import QuakeList from "./components/QuakeList";
 import QuakeView from "./components/QuakeView";
 import MapDisplay from "./components/MapDisplay";
+import Header from "./components/Header";
 
 import { useState } from "react";
 
@@ -66,6 +67,11 @@ function App() {
           <QuakeView vquake={data} onSelectView={quakeViewClear} />
         </div>
       )}
+
+      {/* Display Header */}
+      <div className="a">
+        <Header />
+      </div>
 
       {/* Display map as BG */}
       <div className="Background">
