@@ -39,7 +39,7 @@ const QuakeList: React.FC<QuakeListProps> = ({ quakes, onSelectQuake }) => {
         className="col-md-3 vh-100 mt-3 bg-light rounded shadow"
         style={{ position: "fixed", top: 0, left: 0, overflowY: "auto" }}
       >
-        <h1>QuakeList</h1>
+        <h1>Quakes List</h1>
         {quakes.length === 0 && <p>No quakes to display</p>}
         <ul className="list-group">
           {quakes.map((quake, index) => (

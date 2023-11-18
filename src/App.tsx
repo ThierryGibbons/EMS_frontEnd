@@ -26,7 +26,7 @@ function App() {
       <div className="container-fluid">
         {/* Display Header */}
         <div className="row">
-          <Header />
+          {/* <Header /> removed as this feature requires a working database to update */}
         </div>
         {/* Side Panel */}
         <div className="row">
