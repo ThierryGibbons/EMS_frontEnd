@@ -1,10 +1,21 @@
 import { useMemo, useCallback, useRef, useState } from "react";
-import { GoogleMap } from "@react-google-maps/api";
+import { GoogleMap, Marker } from "@react-google-maps/api";
 
 type LatLngLiteral = google.maps.LatLngLiteral;
 type MapOptions = google.maps.MapOptions;
 
-export default function Map() {
+interface Location {
+  lat: number;
+  lng: number;
+  mmi: number;
+  name: string;
+}
+
+interface MapProps {
+  locations: Location[];
+}
+
+export default function Map({ locations }: MapProps) {
   const mapRef = useRef<GoogleMap>();
   const center = useMemo<LatLngLiteral>(() => ({ lat: -43, lng: 171 }), []);
   const options = useMemo<MapOptions>(
@@ -26,7 +37,16 @@ export default function Map() {
           mapContainerClassName="map-container"
           options={options}
           onLoad={onLoad}
-        />
+        >
+          {locations.map((location) => (
+            <Marker
+              key={location.name}
+              position={{ lat: location.lat, lng: location.lng }}
+              // Optional: Add a label or tooltip to display the MMI and name
+              label={location.name}
+            />
+          ))}
+        </GoogleMap>
         <h1>hello world</h1>
       </div>
     </>
