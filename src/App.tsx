@@ -63,21 +63,17 @@ function App() {
         </div>
         {/* Side Panel */}
         <div className="row">
-          <div className="col-md-3 vh-100 mt-3 bg-light rounded shadow">
-            {/* View Quakes on left side of screen */}
-            <QuakeList quakes={quakes} onSelectQuake={handleSelection} />
-          </div>
+          {/* View Quakes on left side of screen */}
+          <QuakeList quakes={quakes} onSelectQuake={handleSelection} />
         </div>
         {/* View Quake Data in centre of screen when selected */}
         {data !== null && (
-          <div className="">
-            <QuakeView vquake={data} onSelectView={quakeViewClear} />
-          </div>
+          <QuakeView vquake={data} onSelectView={quakeViewClear} />
         )}
       </div>
 
       {/* Display map as BG */}
-      <div className="Background">
+      <div className="Background z-n1">
         <MapDisplay />
       </div>
     </>

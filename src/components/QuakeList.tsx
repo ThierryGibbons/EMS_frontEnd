@@ -29,33 +29,38 @@ const QuakeList: React.FC<QuakeListProps> = ({ quakes, onSelectQuake }) => {
 
   return (
     <>
-      <h1>QuakeList</h1>
-      {quakes.length === 0 && <p>No quakes to display</p>}
-      <ul className="list-group">
-        {quakes.map((quake, index) => (
-          <li
-            className={
-              selectedIndex === index
-                ? "alert alert-primary" // Active
-                : hoverIndex === index
-                ? "alert alert-dark"
-                : "alert alert-warning"
-            }
-            onMouseEnter={() => {
-              setHoverIndex(index);
-            }}
-            onMouseLeave={() => {
-              setHoverIndex(-1);
-            }}
-            onClick={() => {
-              handleClick(index, quake);
-            }}
-            key={index}
-          >
-            {quake.region}
-          </li>
-        ))}
-      </ul>
+      <div
+        className="col-md-3 vh-100 mt-3 bg-light rounded shadow"
+        style={{ position: "fixed", top: 0, left: 0 }}
+      >
+        <h1>QuakeList</h1>
+        {quakes.length === 0 && <p>No quakes to display</p>}
+        <ul className="list-group">
+          {quakes.map((quake, index) => (
+            <li
+              className={
+                selectedIndex === index
+                  ? "alert alert-primary" // Active
+                  : hoverIndex === index
+                  ? "alert alert-dark"
+                  : "alert alert-warning"
+              }
+              onMouseEnter={() => {
+                setHoverIndex(index);
+              }}
+              onMouseLeave={() => {
+                setHoverIndex(-1);
+              }}
+              onClick={() => {
+                handleClick(index, quake);
+              }}
+              key={index}
+            >
+              {quake.region}
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 };
