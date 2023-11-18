@@ -26,7 +26,7 @@ export const useGeoNetData = (): Location[] => {
           })
         );
         setLocations(mappedLocations);
-        console.log(mappedLocations);
+        // console.log(mappedLocations);
       } catch (error) {
         console.error("Error fetching GeoNet data:", error);
       }
