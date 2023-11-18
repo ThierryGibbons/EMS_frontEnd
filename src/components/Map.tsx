@@ -13,9 +13,10 @@ interface Location {
 
 interface MapProps {
   locations: Location[];
+  selectedMarker: (location: Location) => void;
 }
 
-export default function Map({ locations }: MapProps) {
+export default function Map({ locations, selectedMarker }: MapProps) {
   const mapRef = useRef<GoogleMap>();
   const center = useMemo<LatLngLiteral>(() => ({ lat: -43, lng: 171 }), []);
   const options = useMemo<MapOptions>(
@@ -27,6 +28,10 @@ export default function Map({ locations }: MapProps) {
     []
   );
   const onLoad = useCallback((map) => (mapRef.current = map), []);
+
+  const markerClick = (location: Location) => {
+    selectedMarker(location);
+  };
 
   return (
     <>
@@ -43,7 +48,10 @@ export default function Map({ locations }: MapProps) {
               key={location.name}
               position={{ lat: location.lat, lng: location.lng }}
               // Optional: Add a label or tooltip to display the MMI and name
-              label={location.name}
+              // label={location.name}
+              onClick={() => {
+                markerClick(location);
+              }}
             />
           ))}
         </GoogleMap>

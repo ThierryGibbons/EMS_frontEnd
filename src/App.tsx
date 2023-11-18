@@ -41,7 +41,7 @@ function App() {
 
       {/* Display map as BG */}
       <div className="Background z-n1">
-        <MapDisplay />
+        <MapDisplay handleSelection={handleSelection} />
       </div>
     </>
   );
