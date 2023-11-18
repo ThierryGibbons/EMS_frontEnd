@@ -1,13 +1,19 @@
 // {quakes: [{id: number, region: string, magnitude: number, depth: number, lat: number, lng: number, datetime: string}]}
+// interface Quake {
+//   id: number;
+//   region: string;
+//   location: string;
+//   magnitude: number;
+//   depth: number;
+//   lat: number;
+//   lng: number;
+//   datetime: string;
+// }
 interface Quake {
-  id: number;
-  region: string;
-  location: string;
-  magnitude: number;
-  depth: number;
   lat: number;
   lng: number;
-  datetime: string;
+  mmi: number;
+  name: string;
 }
 
 interface QuakeListProps {
@@ -56,7 +62,7 @@ const QuakeList: React.FC<QuakeListProps> = ({ quakes, onSelectQuake }) => {
               }}
               key={index}
             >
-              {quake.region}
+              {quake.name}
             </li>
           ))}
         </ul>

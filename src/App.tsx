@@ -3,6 +3,7 @@ import QuakeList from "./components/QuakeList";
 import QuakeView from "./components/QuakeView";
 import MapDisplay from "./components/MapDisplay";
 import Header from "./components/Header";
+import { useGeoNetData } from "./components/getQuakes";
 
 import { useState } from "react";
 
@@ -11,38 +12,39 @@ function App() {
 
   // TODO: Fetch data from API
   // Temp data
-  let quakes = [
-    {
-      id: 1,
-      region: "Region",
-      location: "Location",
-      magnitude: 1.0,
-      depth: 1.0,
-      lat: 1.0,
-      lng: 1.0,
-      datetime: "Date",
-    },
-    {
-      id: 2,
-      region: "Region",
-      location: "Location",
-      magnitude: 1.0,
-      depth: 1.0,
-      lat: 1.0,
-      lng: 1.0,
-      datetime: "Date",
-    },
-    {
-      id: 3,
-      region: "Region",
-      location: "Location",
-      magnitude: 1.0,
-      depth: 1.0,
-      lat: 1.0,
-      lng: 1.0,
-      datetime: "Date",
-    },
-  ];
+  // let quakes = [
+  //   {
+  //     id: 1,
+  //     region: "Region",
+  //     location: "Location",
+  //     magnitude: 1.0,
+  //     depth: 1.0,
+  //     lat: 1.0,
+  //     lng: 1.0,
+  //     datetime: "Date",
+  //   },
+  //   {
+  //     id: 2,
+  //     region: "Region",
+  //     location: "Location",
+  //     magnitude: 1.0,
+  //     depth: 1.0,
+  //     lat: 1.0,
+  //     lng: 1.0,
+  //     datetime: "Date",
+  //   },
+  //   {
+  //     id: 3,
+  //     region: "Region",
+  //     location: "Location",
+  //     magnitude: 1.0,
+  //     depth: 1.0,
+  //     lat: 1.0,
+  //     lng: 1.0,
+  //     datetime: "Date",
+  //   },
+  // ];
+  let quakes = useGeoNetData();
 
   // TODO: Display Quake Data in popup
   const handleSelection = (newData) => {

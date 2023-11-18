@@ -1,4 +1,4 @@
-import { useMemo, useCallback, useRef } from "react";
+import { useMemo, useCallback, useRef, useState } from "react";
 import { GoogleMap } from "@react-google-maps/api";
 
 type LatLngLiteral = google.maps.LatLngLiteral;
@@ -6,9 +6,13 @@ type MapOptions = google.maps.MapOptions;
 
 export default function Map() {
   const mapRef = useRef<GoogleMap>();
-  const center = useMemo<LatLngLiteral>(() => ({ lat: 43, lng: -80 }), []);
+  const center = useMemo<LatLngLiteral>(() => ({ lat: -43, lng: 171 }), []);
   const options = useMemo<MapOptions>(
-    () => ({ disableDefaultUI: true, clickableIcons: false }),
+    () => ({
+      mapId: "c36e4e976628b519",
+      disableDefaultUI: true,
+      clickableIcons: false,
+    }),
     []
   );
   const onLoad = useCallback((map) => (mapRef.current = map), []);

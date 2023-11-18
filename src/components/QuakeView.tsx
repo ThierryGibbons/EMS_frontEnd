@@ -1,12 +1,8 @@
 interface vQuake {
-  id: number;
-  region: string;
-  location: string;
-  magnitude: number;
-  depth: number;
   lat: number;
   lng: number;
-  datetime: string;
+  mmi: number;
+  name: string;
 }
 
 interface QuakeViewProps {
@@ -34,26 +30,6 @@ const QuakeView: React.FC<QuakeViewProps> = ({ vquake, onSelectView }) => {
           <table>
             <tbody>
               <tr>
-                <th>ID</th>
-                <td>{vquake.id}</td>
-              </tr>
-              <tr>
-                <th>Region</th>
-                <td>{vquake.region}</td>
-              </tr>
-              <tr>
-                <th>Location</th>
-                <td>{vquake.location}</td>
-              </tr>
-              <tr>
-                <th>Magnitude</th>
-                <td>{vquake.magnitude}</td>
-              </tr>
-              <tr>
-                <th>Depth</th>
-                <td>{vquake.depth}</td>
-              </tr>
-              <tr>
                 <th>Latitude</th>
                 <td>{vquake.lat}</td>
               </tr>
@@ -62,8 +38,12 @@ const QuakeView: React.FC<QuakeViewProps> = ({ vquake, onSelectView }) => {
                 <td>{vquake.lng}</td>
               </tr>
               <tr>
-                <th>DateTime</th>
-                <td>{vquake.datetime}</td>
+                <th>MMI</th>
+                <td>{vquake.mmi}</td>
+              </tr>
+              <tr>
+                <th>Name</th>
+                <td>{vquake.name}</td>
               </tr>
             </tbody>
           </table>
