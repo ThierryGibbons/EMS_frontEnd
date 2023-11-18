@@ -37,7 +37,7 @@ const QuakeList: React.FC<QuakeListProps> = ({ quakes, onSelectQuake }) => {
     <>
       <div
         className="col-md-3 vh-100 mt-3 bg-light rounded shadow"
-        style={{ position: "fixed", top: 0, left: 0 }}
+        style={{ position: "fixed", top: 0, left: 0, overflowY: "auto" }}
       >
         <h1>QuakeList</h1>
         {quakes.length === 0 && <p>No quakes to display</p>}
