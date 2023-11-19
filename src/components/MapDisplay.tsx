@@ -1,4 +1,4 @@
-import Map from "../components/map";
+import Map from "../components/Map";
 import { useLoadScript } from "@react-google-maps/api";
 import { useGeoNetData } from "../components/getQuakes";
 // import map from "../components/map";
