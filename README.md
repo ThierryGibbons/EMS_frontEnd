@@ -1,27 +1,28 @@
-# React + TypeScript + Vite
+# Earthquake Monitor System NZ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+The Earthquake Monitor System Application is designed to provide real-time monitoring and alerts for seismic activities. Developed as part of the Bachelor of Software Engineering program, this application integrates various tools and frameworks to deliver accurate and timely earthquake data.
 
-Currently, two official plugins are available:
+## Features
+- Real-time earthquake monitoring.
+- User-friendly interface.
+- Front-end development with React JS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
+- [Node.js](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
+- [Vite](https://vitejs.dev/)
 
-## Expanding the ESLint configuration
+## Contribution
+- **Thierry Gibbons:** Developer(React), UI/UX Designer
+- **Naomi Murachi:** Data Management(Django), GIS Specialist
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Installation
+To install the application, run the following command in the root directory:
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+npm install
+```
+npm will install all the required dependencies for the application to run.
+```
+npm run dev
+```
